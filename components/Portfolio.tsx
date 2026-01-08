@@ -34,7 +34,7 @@ const Portfolio = () => {
     ];
 
     return (
-        <section className="py-20 bg-gradient-to-br from-gray-50 to-purple-50 dark:from-gray-800 dark:to-gray-900">
+        <section className="py-24 bg-white">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -44,12 +44,13 @@ const Portfolio = () => {
                     className="text-center mb-16"
                 >
                     <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-                        <span className="bg-gradient-to-r from-[#0878b5] to-[#020c36] bg-clip-text text-transparent">
-                            Recent Works
-                        </span>
+                        <span className="text-[#3eb4d6]">
+                            Recent
+                        </span>{" "}
+                        <span className="text-[#5b6f73]">Works</span>
                     </h2>
-                    <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                        Here are some of our favorite projects we have done lately
+                    <p className="text-lg text-[#5b6f73]/70 max-w-2xl mx-auto">
+                        A showcase of our digital excellence and innovative solutions
                     </p>
                 </motion.div>
 
@@ -61,11 +62,11 @@ const Portfolio = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: index * 0.1 }}
-                            className="group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
+                            className="group relative bg-white rounded-2xl overflow-hidden border border-gray-100 premium-shadow"
                         >
                             {/* Image */}
-                            <div className="relative h-64 bg-gradient-to-br from-[#0878b5] to-[#020c36] overflow-hidden">
-                                <div className="absolute inset-0 flex items-center justify-center text-white text-6xl font-bold opacity-20">
+                            <div className="relative h-64 bg-gray-50 overflow-hidden">
+                                <div className="absolute inset-0 flex items-center justify-center text-[#3eb4d6] text-8xl font-display font-bold opacity-10">
                                     {project.title.charAt(0)}
                                 </div>
                                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300"></div>
@@ -76,7 +77,7 @@ const Portfolio = () => {
                                         href={project.link}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="bg-white text-gray-900 px-6 py-3 rounded-full font-semibold flex items-center space-x-2 hover:bg-gray-100 transition-colors duration-200"
+                                        className="bg-[#3eb4d6] text-white px-6 py-3 rounded-full font-bold flex items-center space-x-2 hover:bg-white hover:text-[#3eb4d6] transition-all duration-300 shadow-md"
                                     >
                                         <span>View Project</span>
                                         <HiExternalLink className="w-5 h-5" />
@@ -86,13 +87,13 @@ const Portfolio = () => {
 
                             {/* Content */}
                             <div className="p-6">
-                                <div className="text-sm text-blue-600 dark:text-blue-400 font-semibold mb-2">
+                                <div className="text-sm text-[#3eb4d6] font-semibold mb-2 uppercase tracking-wider">
                                     {project.category}
                                 </div>
-                                <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">
+                                <h3 className="text-xl font-bold mb-3 text-[#5b6f73]">
                                     {project.title}
                                 </h3>
-                                <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+                                <p className="text-[#5b6f73]/70 text-sm leading-relaxed">
                                     {project.description}
                                 </p>
 
@@ -122,7 +123,7 @@ const Portfolio = () => {
                 >
                     <Link
                         href="/portfolio"
-                        className="inline-flex items-center justify-center px-8 py-4 font-semibold text-white bg-gradient-to-r from-[#0878b5] to-[#020c36] rounded-full hover:shadow-lg hover:shadow-[#0878b5]/50 transition-all duration-300"
+                        className="inline-flex items-center justify-center px-10 py-4 font-semibold text-white bg-[#3eb4d6] rounded-full hover:bg-[#3eb4d6]/90 transition-all duration-300 shadow-md shadow-[#3eb4d6]/20"
                     >
                         View All Projects
                     </Link>

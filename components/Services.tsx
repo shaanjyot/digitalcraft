@@ -57,7 +57,7 @@ const Services = () => {
     ];
 
     return (
-        <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-800 dark:to-gray-900">
+        <section className="py-24 bg-white">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -68,11 +68,12 @@ const Services = () => {
                 >
                     <h2 className="text-4xl sm:text-5xl font-bold mb-4">
                         We help to build clients their{" "}
-                        <span className="bg-gradient-to-r from-[#0878b5] to-[#020c36] bg-clip-text text-transparent">
-                            dream projects
-                        </span>
+                        <span className="text-[#3eb4d6]">
+                            dream
+                        </span>{" "}
+                        <span className="text-[#5b6f73]">projects</span>
                     </h2>
-                    <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                    <p className="text-lg text-[#5b6f73]/70 max-w-2xl mx-auto">
                         Comprehensive digital services to transform your business
                     </p>
                 </motion.div>
@@ -81,36 +82,35 @@ const Services = () => {
                     {services.map((service, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.05 }}
-                            whileHover={{ y: -8 }}
-                            className="group relative bg-white dark:bg-gray-800 p-8 rounded-2xl border border-gray-200 dark:border-gray-700 hover:border-transparent transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-blue-500/20"
+                            whileHover={{ y: -5 }}
+                            className="group relative bg-white p-8 rounded-2xl border border-gray-100 hover:border-[#3eb4d6]/20 transition-all duration-300 premium-shadow"
                         >
-                            {/* Gradient Border on Hover */}
-                            <div className="absolute inset-0 bg-gradient-to-r from-[#0878b5] to-[#020c36] rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
-                            <div className="absolute inset-[1px] bg-white dark:bg-gray-800 rounded-2xl -z-10"></div>
+                            {/* Theme Overlay removed */}
+                            <div className="absolute inset-[1px] bg-white rounded-2xl -z-10"></div>
 
                             {/* Icon */}
                             <div className="mb-6">
-                                <div className="w-16 h-16 bg-gradient-to-r from-[#0878b5] to-[#020c36] rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                    <service.icon className="w-8 h-8 text-white" />
+                                <div className="w-16 h-16 bg-[#3eb4d6]/5 rounded-xl flex items-center justify-center group-hover:bg-[#99f200] transition-all duration-300">
+                                    <service.icon className="w-8 h-8 text-[#3eb4d6] group-hover:text-[#5b6f73]" />
                                 </div>
                             </div>
 
                             {/* Content */}
-                            <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">
+                            <h3 className="text-xl font-bold mb-3 text-[#5b6f73]">
                                 {service.title}
                             </h3>
-                            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                            <p className="text-[#5b6f73]/80 leading-relaxed text-sm">
                                 {service.description}
                             </p>
                         </motion.div>
                     ))}
                 </div>
-            </div>
-        </section>
+            </div >
+        </section >
     );
 };
 

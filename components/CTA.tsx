@@ -7,15 +7,15 @@ import { HiArrowRight } from "react-icons/hi";
 const CTA = () => {
     return (
         <section className="relative py-20 overflow-hidden">
-            {/* Background with Gradient */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#0878b5] to-[#020c36]">
-                <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
+            {/* Background with Brand Color */}
+            <div className="absolute inset-0 bg-white">
+                <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.03]"></div>
             </div>
 
             {/* Animated Background Elements */}
-            <div className="absolute inset-0 overflow-hidden">
-                <div className="absolute top-1/4 -left-48 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
-                <div className="absolute bottom-1/4 -right-48 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                <div className="absolute top-1/4 -left-48 w-96 h-96 bg-[#3eb4d6]/5 rounded-full blur-3xl"></div>
+                <div className="absolute bottom-1/4 -right-48 w-96 h-96 bg-[#99f200]/5 rounded-full blur-3xl"></div>
             </div>
 
             {/* Content */}
@@ -28,18 +28,19 @@ const CTA = () => {
                     className="max-w-4xl mx-auto text-center"
                 >
                     {/* Badge */}
-                    <div className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full mb-8">
-                        <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
-                        <span className="text-sm font-medium">Let's Work Together</span>
+                    <div className="inline-flex items-center space-x-2 bg-gray-50 text-[#3eb4d6] px-5 py-2 rounded-full mb-8 border border-gray-100">
+                        <span className="w-2 h-2 bg-[#99f200] rounded-full animate-pulse"></span>
+                        <span className="text-sm font-bold uppercase tracking-wider">Let's Work Together</span>
                     </div>
 
                     {/* Heading */}
-                    <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-                        Have a Project in Mind?
+                    <h2 className="text-4xl sm:text-5xl lg:text-7xl font-display font-bold mb-8 leading-tight">
+                        <span className="text-[#3eb4d6]">Have a</span>{" "}
+                        <span className="text-[#5b6f73]">Project?</span>
                     </h2>
 
                     {/* Subheading */}
-                    <p className="text-xl sm:text-2xl text-white/90 mb-12 leading-relaxed">
+                    <p className="text-lg sm:text-xl text-[#5b6f73]/70 mb-12 leading-relaxed">
                         Let's Talk! We're here to help you transform your ideas into reality.
                     </p>
 
@@ -47,9 +48,10 @@ const CTA = () => {
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                         <Link
                             href="/contact"
-                            className="group relative inline-flex items-center justify-center px-8 py-4 overflow-hidden font-semibold text-blue-600 bg-white rounded-full shadow-lg hover:shadow-2xl transition-all duration-300"
+                            className="group relative inline-flex items-center justify-center px-10 py-4 overflow-hidden font-bold text-white bg-[#3eb4d6] rounded-full shadow-md shadow-[#3eb4d6]/20 transition-all duration-300"
                         >
-                            <span className="relative flex items-center">
+                            <span className="absolute inset-0 w-full h-full bg-[#99f200] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                            <span className="relative flex items-center group-hover:text-[#5b6f73]">
                                 Get In Touch
                                 <HiArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                             </span>
@@ -57,35 +59,35 @@ const CTA = () => {
 
                         <Link
                             href="/portfolio"
-                            className="inline-flex items-center justify-center px-8 py-4 font-semibold text-white bg-white/10 backdrop-blur-sm border-2 border-white/30 rounded-full hover:bg-white/20 transition-all duration-300"
+                            className="inline-flex items-center justify-center px-10 py-4 font-semibold text-[#5b6f73] bg-white border border-gray-200 rounded-full hover:border-[#99f200] hover:text-[#5b6f73] transition-all duration-300 shadow-sm"
                         >
                             View Our Work
                         </Link>
                     </div>
 
                     {/* Contact Info */}
-                    <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-white">
+                    <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-12 text-[#5b6f73]">
                         <div className="space-y-2">
-                            <div className="text-sm opacity-80">Email Us</div>
+                            <div className="text-xs font-bold uppercase tracking-widest text-[#5b6f73]/50">Email Us</div>
                             <a
                                 href="mailto:info@digitalcraftconsult.com.au"
-                                className="text-lg font-semibold hover:underline"
+                                className="text-lg font-bold hover:text-[#99f200] transition-colors"
                             >
                                 info@digitalcraftconsult.com.au
                             </a>
                         </div>
                         <div className="space-y-2">
-                            <div className="text-sm opacity-80">Call Us</div>
+                            <div className="text-xs font-bold uppercase tracking-widest text-[#5b6f73]/50">Call Us</div>
                             <a
                                 href="tel:+61234567890"
-                                className="text-lg font-semibold hover:underline"
+                                className="text-lg font-bold hover:text-[#99f200] transition-colors"
                             >
                                 +61 234 567 890
                             </a>
                         </div>
                         <div className="space-y-2">
-                            <div className="text-sm opacity-80">Visit Us</div>
-                            <div className="text-lg font-semibold">
+                            <div className="text-xs font-bold uppercase tracking-widest text-[#5b6f73]/50">Visit Us</div>
+                            <div className="text-lg font-bold">
                                 Canberra, Australia
                             </div>
                         </div>

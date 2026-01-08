@@ -4,16 +4,20 @@ import CTA from "@/components/CTA";
 export default function BlogPage() {
     return (
         <main className="pt-20">
-            <section className="py-20 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800">
+            <section className="relative py-24 bg-white">
+                <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                    <div className="absolute top-1/4 -left-48 w-96 h-96 bg-[#3eb4d6]/5 rounded-full blur-3xl"></div>
+                    <div className="absolute bottom-1/4 -right-48 w-96 h-96 bg-[#99f200]/5 rounded-full blur-3xl"></div>
+                </div>
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="max-w-4xl mx-auto text-center mb-16">
-                        <h1 className="text-5xl sm:text-6xl font-bold mb-6">
+                        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold mb-8 leading-tight">
                             Our{" "}
-                            <span className="bg-gradient-to-r from-[#0878b5] to-[#020c36] bg-clip-text text-transparent">
+                            <span className="text-[#3eb4d6]">
                                 Blog
                             </span>
                         </h1>
-                        <p className="text-xl text-gray-600 dark:text-gray-400 leading-relaxed">
+                        <p className="text-xl text-[#5b6f73]/70 leading-relaxed max-w-2xl mx-auto">
                             Insights, tips, and updates from our team of digital transformation experts.
                         </p>
                     </div>

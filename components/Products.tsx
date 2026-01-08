@@ -19,7 +19,7 @@ const Products = () => {
                 "Multiple revision rounds",
                 "Final files in all formats",
             ],
-            gradient: "from-[#0878b5] to-[#020c36]",
+            gradient: "from-[#3eb4d6] to-[#3eb4d6]/80",
             popular: false,
         },
         {
@@ -36,7 +36,7 @@ const Products = () => {
                 "3 months free support",
                 "Other web solutions",
             ],
-            gradient: "from-[#0878b5] to-[#020c36]",
+            gradient: "from-[#3eb4d6] to-[#3eb4d6]/80",
             popular: true,
         },
         {
@@ -52,13 +52,13 @@ const Products = () => {
                 "Google analytics setup",
                 "Search on Web page optimization",
             ],
-            gradient: "from-[#0878b5] to-[#020c36]",
+            gradient: "from-[#3eb4d6] to-[#3eb4d6]/80",
             popular: false,
         },
     ];
 
     return (
-        <section className="py-20 bg-white dark:bg-gray-900">
+        <section className="py-24 bg-white">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -69,11 +69,11 @@ const Products = () => {
                 >
                     <h2 className="text-4xl sm:text-5xl font-bold mb-4">
                         Our{" "}
-                        <span className="bg-gradient-to-r from-[#0878b5] to-[#020c36] bg-clip-text text-transparent">
+                        <span className="text-[#3eb4d6]">
                             Products
                         </span>
                     </h2>
-                    <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                    <p className="text-lg text-[#5b6f73]/70 max-w-2xl mx-auto">
                         Choose the perfect package for your business needs
                     </p>
                 </motion.div>
@@ -86,15 +86,15 @@ const Products = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: index * 0.1 }}
-                            className={`relative bg-white dark:bg-gray-800 rounded-2xl border-2 ${product.popular
-                                    ? "border-purple-500 shadow-2xl shadow-purple-500/20 scale-105"
-                                    : "border-gray-200 dark:border-gray-700"
-                                } p-8 hover:shadow-xl transition-all duration-300`}
+                            className={`relative bg-white rounded-2xl border ${product.popular
+                                ? "border-[#3eb4d6]/30 shadow-xl shadow-[#3eb4d6]/5 scale-105 z-10"
+                                : "border-gray-100 shadow-sm"
+                                } p-8 hover:shadow-md transition-all duration-300`}
                         >
                             {/* Popular Badge */}
                             {product.popular && (
                                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                                    <span className="bg-gradient-to-r from-[#0878b5] to-[#020c36] text-white px-6 py-2 rounded-full text-sm font-semibold shadow-lg">
+                                    <span className="bg-[#99f200] text-[#5b6f73] px-6 py-1.5 rounded-full text-xs font-bold shadow-md uppercase tracking-wider">
                                         Most Popular
                                     </span>
                                 </div>
@@ -102,10 +102,10 @@ const Products = () => {
 
                             {/* Product Name */}
                             <div className="mb-6">
-                                <h3 className={`text-2xl font-bold bg-gradient-to-r ${product.gradient} bg-clip-text text-transparent mb-2`}>
+                                <h3 className={`text-2xl font-bold text-[#3eb4d6] mb-2 uppercase tracking-wide`}>
                                     {product.name}
                                 </h3>
-                                <p className="text-gray-600 dark:text-gray-400 text-sm">
+                                <p className="text-[#5b6f73]/70 text-sm leading-relaxed">
                                     {product.description}
                                 </p>
                             </div>
@@ -113,10 +113,10 @@ const Products = () => {
                             {/* Price */}
                             <div className="mb-8">
                                 <div className="flex items-baseline">
-                                    <span className="text-5xl font-bold text-gray-900 dark:text-white">
+                                    <span className="text-5xl font-bold text-[#5b6f73]">
                                         {product.price}
                                     </span>
-                                    <span className="ml-2 text-gray-600 dark:text-gray-400">
+                                    <span className="ml-2 text-[#5b6f73]/60 text-sm uppercase tracking-wider">
                                         / {product.period}
                                     </span>
                                 </div>
@@ -127,7 +127,7 @@ const Products = () => {
                                 {product.features.map((feature, idx) => (
                                     <li key={idx} className="flex items-start">
                                         <svg
-                                            className={`w-6 h-6 mr-3 flex-shrink-0 bg-gradient-to-r ${product.gradient} text-white rounded-full p-1`}
+                                            className={`w-5 h-5 mr-3 flex-shrink-0 text-[#3eb4d6] bg-[#3eb4d6]/5 rounded-full p-1`}
                                             fill="none"
                                             stroke="currentColor"
                                             viewBox="0 0 24 24"
@@ -139,7 +139,7 @@ const Products = () => {
                                                 d="M5 13l4 4L19 7"
                                             />
                                         </svg>
-                                        <span className="text-gray-700 dark:text-gray-300">
+                                        <span className="text-[#5b6f73]/80 text-sm">
                                             {feature}
                                         </span>
                                     </li>
@@ -149,7 +149,7 @@ const Products = () => {
                             {/* CTA Button */}
                             <Link
                                 href="/contact"
-                                className={`group w-full inline-flex items-center justify-center px-6 py-4 font-semibold text-white bg-gradient-to-r ${product.gradient} rounded-full hover:shadow-lg transition-all duration-300`}
+                                className={`group w-full inline-flex items-center justify-center px-6 py-3.5 font-semibold text-white bg-[#3eb4d6] rounded-full hover:bg-[#99f200] hover:text-[#5b6f73] transition-all duration-300 shadow-md shadow-[#3eb4d6]/10`}
                             >
                                 Get Started
                                 <HiArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />

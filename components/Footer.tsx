@@ -29,7 +29,12 @@ const Footer = () => {
     ];
 
     return (
-        <footer className="bg-gray-900 dark:bg-gray-950 text-gray-300">
+        <footer className="relative bg-[#5b6f73]/10 pt-20 overflow-hidden border-t border-gray-100">
+            {/* Greyish Blue Brand Gradient Background */}
+            <div className="absolute inset-0 pointer-events-none">
+                <div className="absolute inset-0 opacity-[0.15] bg-gradient-to-br from-[#5b6f73] via-[#3eb4d6] to-[#5b6f73]"></div>
+                <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-white/20 to-transparent"></div>
+            </div>
             {/* Main Footer */}
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
@@ -37,36 +42,36 @@ const Footer = () => {
                     <div className="space-y-6">
                         <div className="flex items-center space-x-3">
                             <div className="relative">
-                                <div className="absolute inset-0 bg-gradient-to-br from-[#0878b5] to-[#020c36] rounded-xl blur-sm opacity-75"></div>
-                                <div className="relative bg-gradient-to-br from-[#0878b5] to-[#020c36] text-white font-bold text-lg px-4 py-2.5 rounded-xl shadow-lg">
+                                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-[#3eb4d6]/10 rounded-sm"></div>
+                                <div className="relative text-[#3eb4d6] font-bold text-2xl tracking-tighter">
                                     DC
                                 </div>
                             </div>
                             <div className="flex flex-col">
-                                <span className="text-lg font-display font-bold text-white">
+                                <span className="text-xl font-display font-bold text-[#5b6f73]">
                                     Digital Craft
                                 </span>
-                                <span className="text-xs text-gray-400 -mt-1">Consultants</span>
+                                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#3eb4d6] -mt-1">
+                                    Consultants
+                                </span>
                             </div>
                         </div>
-                        <p className="text-sm leading-relaxed">
+                        <p className="text-sm leading-relaxed text-[#5b6f73]/70">
                             We are a Digital Transformation Consultancy based out of Canberra. We help businesses design world-class solutions and create a strong online presence.
                         </p>
                         <div className="flex space-x-3">
                             {[
-                                { icon: FaFacebookF, href: "https://facebook.com" },
-                                { icon: FaTwitter, href: "https://twitter.com" },
-                                { icon: FaLinkedinIn, href: "https://linkedin.com" },
-                                { icon: FaInstagram, href: "https://instagram.com" },
+                                { icon: FaFacebookF, href: "#" },
+                                { icon: FaTwitter, href: "#" },
+                                { icon: FaLinkedinIn, href: "#" },
+                                { icon: FaInstagram, href: "#" },
                             ].map((social, idx) => (
                                 <a
                                     key={idx}
                                     href={social.href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="w-10 h-10 rounded-full bg-gray-800 hover:bg-gradient-to-br hover:from-[#0878b5] hover:to-[#020c36] flex items-center justify-center transition-all duration-300 hover:scale-110"
+                                    className="w-10 h-10 rounded-full bg-[#5b6f73]/5 text-[#5b6f73] hover:bg-[#3eb4d6] hover:text-white flex items-center justify-center transition-all duration-300"
                                 >
-                                    <social.icon className="w-4 h-4" />
+                                    <social.icon className="w-3.5 h-3.5" />
                                 </a>
                             ))}
                         </div>
@@ -74,15 +79,14 @@ const Footer = () => {
 
                     {/* Quick Links */}
                     <div>
-                        <h3 className="text-white font-display font-semibold text-lg mb-6">Quick Links</h3>
+                        <h3 className="text-[#5b6f73] font-bold text-sm uppercase tracking-widest mb-8">Quick Links</h3>
                         <ul className="space-y-3">
                             {quickLinks.map((link) => (
                                 <li key={link.name}>
                                     <Link
                                         href={link.href}
-                                        className="text-sm hover:text-primary-400 transition-colors duration-200 flex items-center group"
+                                        className="text-sm text-[#5b6f73]/70 hover:text-[#3eb4d6] transition-colors duration-200"
                                     >
-                                        <span className="w-0 group-hover:w-2 h-0.5 bg-primary-400 mr-0 group-hover:mr-2 transition-all duration-200"></span>
                                         {link.name}
                                     </Link>
                                 </li>
@@ -92,15 +96,14 @@ const Footer = () => {
 
                     {/* Products */}
                     <div>
-                        <h3 className="text-white font-display font-semibold text-lg mb-6">Our Products</h3>
+                        <h3 className="text-[#5b6f73] font-bold text-sm uppercase tracking-widest mb-8">Products</h3>
                         <ul className="space-y-3">
                             {products.map((product) => (
                                 <li key={product.name}>
                                     <Link
                                         href={product.href}
-                                        className="text-sm hover:text-primary-400 transition-colors duration-200 flex items-center group"
+                                        className="text-sm text-[#5b6f73]/70 hover:text-[#3eb4d6] transition-colors duration-200"
                                     >
-                                        <span className="w-0 group-hover:w-2 h-0.5 bg-primary-400 mr-0 group-hover:mr-2 transition-all duration-200"></span>
                                         {product.name}
                                     </Link>
                                 </li>
@@ -110,26 +113,26 @@ const Footer = () => {
 
                     {/* Contact Info */}
                     <div>
-                        <h3 className="text-white font-display font-semibold text-lg mb-6">Contact Info</h3>
+                        <h3 className="text-[#5b6f73] font-bold text-sm uppercase tracking-widest mb-8">Contact</h3>
                         <ul className="space-y-4">
                             <li className="flex items-start space-x-3">
-                                <HiLocationMarker className="w-5 h-5 text-primary-400 mt-0.5 flex-shrink-0" />
-                                <span className="text-sm">Canberra, Australia</span>
+                                <HiLocationMarker className="w-4 h-4 text-[#3eb4d6] mt-0.5 flex-shrink-0" />
+                                <span className="text-sm text-[#5b6f73]/70">Canberra, Australia</span>
                             </li>
                             <li className="flex items-start space-x-3">
-                                <HiMail className="w-5 h-5 text-primary-400 mt-0.5 flex-shrink-0" />
+                                <HiMail className="w-4 h-4 text-[#3eb4d6] mt-0.5 flex-shrink-0" />
                                 <a
                                     href="mailto:info@digitalcraftconsult.com.au"
-                                    className="text-sm hover:text-primary-400 transition-colors duration-200"
+                                    className="text-sm text-[#5b6f73]/70 hover:text-[#3eb4d6] transition-colors duration-200"
                                 >
                                     info@digitalcraftconsult.com.au
                                 </a>
                             </li>
                             <li className="flex items-start space-x-3">
-                                <HiPhone className="w-5 h-5 text-primary-400 mt-0.5 flex-shrink-0" />
+                                <HiPhone className="w-4 h-4 text-[#3eb4d6] mt-0.5 flex-shrink-0" />
                                 <a
                                     href="tel:+61234567890"
-                                    className="text-sm hover:text-primary-400 transition-colors duration-200"
+                                    className="text-sm text-[#5b6f73]/70 hover:text-[#3eb4d6] transition-colors duration-200"
                                 >
                                     +61 234 567 890
                                 </a>
@@ -139,23 +142,23 @@ const Footer = () => {
                 </div>
 
                 {/* Newsletter */}
-                <div className="mt-12 pt-12 border-t border-gray-800">
+                <div className="mt-20 pt-12 border-t border-gray-100">
                     <div className="max-w-2xl mx-auto text-center">
-                        <h3 className="text-white font-display font-semibold text-2xl mb-4">
+                        <h3 className="text-[#5b6f73] font-bold text-xl mb-4">
                             Subscribe to Our Newsletter
                         </h3>
-                        <p className="text-sm mb-6">
+                        <p className="text-sm text-[#5b6f73]/70 mb-8">
                             Stay updated with our latest news, products, and exclusive offers.
                         </p>
                         <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
                             <input
                                 type="email"
                                 placeholder="Enter your email"
-                                className="flex-1 px-5 py-3 rounded-full bg-gray-800 border border-gray-700 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 transition-all duration-200 text-white placeholder-gray-400"
+                                className="flex-1 px-6 py-3 rounded-full bg-gray-50 border border-gray-100 focus:border-[#3eb4d6] focus:outline-none focus:ring-4 focus:ring-[#3eb4d6]/5 transition-all duration-200 text-[#5b6f73] placeholder-gray-400"
                             />
                             <button
                                 type="submit"
-                                className="px-8 py-3 bg-gradient-to-r from-[#0878b5] to-[#020c36] text-white font-semibold rounded-full hover:shadow-lg hover:shadow-[#0878b5]/30 transition-all duration-300 hover:scale-105"
+                                className="px-10 py-3 bg-[#3eb4d6] text-white font-bold rounded-full hover:bg-[#3eb4d6]/90 transition-all duration-300 shadow-md shadow-[#3eb4d6]/10"
                             >
                                 Subscribe
                             </button>
@@ -165,10 +168,10 @@ const Footer = () => {
             </div>
 
             {/* Bottom Footer */}
-            <div className="border-t border-gray-800">
+            <div className="border-t border-gray-100">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
                     <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-                        <p className="text-sm text-gray-400">
+                        <p className="text-sm text-[#5b6f73]/50">
                             © {currentYear} Digital Craft Consultants. All rights reserved.
                         </p>
                         <div className="flex flex-wrap justify-center gap-6">
@@ -176,7 +179,7 @@ const Footer = () => {
                                 <Link
                                     key={link.name}
                                     href={link.href}
-                                    className="text-sm text-gray-400 hover:text-primary-400 transition-colors duration-200"
+                                    className="text-xs font-bold uppercase tracking-widest text-[#5b6f73]/40 hover:text-[#3eb4d6] transition-colors duration-200"
                                 >
                                     {link.name}
                                 </Link>

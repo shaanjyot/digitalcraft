@@ -22,7 +22,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="antialiased">
+      <head>
+        <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/carolingia" />
+      </head>
+      <body className="antialiased font-sans">
         <Header />
         {children}
         <Footer />

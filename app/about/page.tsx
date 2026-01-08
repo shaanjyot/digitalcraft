@@ -31,7 +31,11 @@ export default function AboutPage() {
     return (
         <main className="pt-20">
             {/* Hero Section */}
-            <section className="relative py-20 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800">
+            <section className="relative py-24 bg-white">
+                <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                    <div className="absolute top-1/4 -left-48 w-96 h-96 bg-[#3eb4d6]/5 rounded-full blur-3xl"></div>
+                    <div className="absolute bottom-1/4 -right-48 w-96 h-96 bg-[#99f200]/5 rounded-full blur-3xl"></div>
+                </div>
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -39,13 +43,14 @@ export default function AboutPage() {
                         transition={{ duration: 0.8 }}
                         className="max-w-4xl mx-auto text-center"
                     >
-                        <h1 className="text-5xl sm:text-6xl font-bold mb-6">
+                        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold mb-8 leading-tight">
                             About{" "}
-                            <span className="bg-gradient-to-r from-[#0878b5] to-[#020c36] bg-clip-text text-transparent">
-                                Digital Craft
-                            </span>
+                            <span className="text-[#3eb4d6]">
+                                Digital
+                            </span>{" "}
+                            <span className="text-[#5b6f73]">Craft</span>
                         </h1>
-                        <p className="text-xl text-gray-600 dark:text-gray-400 leading-relaxed">
+                        <p className="text-xl text-[#5b6f73]/70 leading-relaxed max-w-2xl mx-auto">
                             We are a Digital Transformation Consultancy based out of Canberra, dedicated to helping businesses thrive in the digital age.
                         </p>
                     </motion.div>
@@ -53,7 +58,7 @@ export default function AboutPage() {
             </section>
 
             {/* Story Section */}
-            <section className="py-20 bg-white dark:bg-gray-900">
+            <section className="py-20 bg-white">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="max-w-4xl mx-auto">
                         <motion.div
@@ -62,8 +67,8 @@ export default function AboutPage() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
                         >
-                            <h2 className="text-4xl font-bold mb-8">Our Story</h2>
-                            <div className="space-y-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+                            <h2 className="text-4xl font-bold mb-8 text-[#5b6f73]">Our Story</h2>
+                            <div className="space-y-6 text-lg text-[#5b6f73]/80 leading-relaxed">
                                 <p>
                                     Digital Craft Consultants was founded with a simple mission: to help businesses navigate the complex world of digital transformation. Based in Canberra, Australia, we've been serving small and medium enterprises, startups, and large corporates with innovative digital solutions.
                                 </p>
@@ -80,7 +85,7 @@ export default function AboutPage() {
             </section>
 
             {/* Values Section */}
-            <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-800 dark:to-gray-900">
+            <section className="py-24 bg-gray-50/50">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -89,8 +94,8 @@ export default function AboutPage() {
                         transition={{ duration: 0.6 }}
                         className="text-center mb-16"
                     >
-                        <h2 className="text-4xl font-bold mb-4">Our Values</h2>
-                        <p className="text-xl text-gray-600 dark:text-gray-400">
+                        <h2 className="text-4xl font-bold mb-4 text-[#5b6f73]">Our Values</h2>
+                        <p className="text-lg text-[#5b6f73]/70">
                             The principles that guide everything we do
                         </p>
                     </motion.div>
@@ -99,19 +104,19 @@ export default function AboutPage() {
                         {values.map((value, index) => (
                             <motion.div
                                 key={index}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                                className="bg-white dark:bg-gray-800 p-8 rounded-2xl border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300"
+                                className="bg-white p-8 rounded-2xl border border-gray-100 premium-shadow hover:-translate-y-1 transition-all duration-300"
                             >
-                                <div className="w-16 h-16 bg-gradient-to-r from-[#0878b5] to-[#020c36] rounded-xl flex items-center justify-center mb-6">
-                                    <value.icon className="w-8 h-8 text-white" />
+                                <div className="w-16 h-16 bg-[#3eb4d6]/5 rounded-xl flex items-center justify-center mb-6">
+                                    <value.icon className="w-8 h-8 text-[#3eb4d6]" />
                                 </div>
-                                <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">
+                                <h3 className="text-xl font-bold mb-3 text-[#5b6f73]">
                                     {value.title}
                                 </h3>
-                                <p className="text-gray-600 dark:text-gray-400">
+                                <p className="text-[#5b6f73]/70 text-sm leading-relaxed">
                                     {value.description}
                                 </p>
                             </motion.div>
@@ -121,7 +126,7 @@ export default function AboutPage() {
             </section>
 
             {/* CTA Section */}
-            <section className="py-20 bg-white dark:bg-gray-900">
+            <section className="py-20 bg-white">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -130,15 +135,15 @@ export default function AboutPage() {
                         transition={{ duration: 0.6 }}
                         className="max-w-4xl mx-auto text-center"
                     >
-                        <h2 className="text-4xl font-bold mb-6">
-                            Ready to Transform Your Business?
+                        <h2 className="text-4xl font-bold mb-6 text-[#5b6f73]">
+                            Ready to Transform your Business?
                         </h2>
-                        <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
+                        <p className="text-lg text-[#5b6f73]/70 mb-10">
                             Let's work together to bring your digital vision to life.
                         </p>
                         <Link
                             href="/contact"
-                            className="inline-flex items-center justify-center px-8 py-4 font-semibold text-white bg-gradient-to-r from-[#0878b5] to-[#020c36] rounded-full hover:shadow-lg hover:shadow-[#0878b5]/50 transition-all duration-300"
+                            className="inline-flex items-center justify-center px-10 py-4 font-bold text-white bg-[#3eb4d6] rounded-full hover:bg-[#3eb4d6]/90 shadow-md shadow-[#3eb4d6]/20 transition-all duration-300"
                         >
                             Get In Touch
                         </Link>
