@@ -30,7 +30,7 @@ const Hero = () => {
                             </div>
 
                             {/* Main Heading */}
-                            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold mb-6 leading-tight text-left">
+                            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold mb-6 leading-[0.85] sm:leading-tight text-left">
                                 <span className="text-[#3eb4d6]">
                                     Fuelling
                                 </span>{" "}

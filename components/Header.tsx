@@ -39,7 +39,7 @@ const Header = () => {
         <header
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
                 ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100"
-                : "bg-transparent"
+                : "bg-white lg:bg-transparent"
                 }`}
         >
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -116,25 +116,31 @@ const Header = () => {
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="lg:hidden bg-white dark:bg-gray-950 border-t border-gray-200 dark:border-gray-800"
+                        className="lg:hidden bg-[#5b6f73]/10 border-t border-gray-100 shadow-xl relative overflow-hidden"
                     >
-                        <nav className="container mx-auto px-4 py-6 space-y-1">
+                        {/* Footer-like Gradient Background */}
+                        <div className="absolute inset-0 pointer-events-none">
+                            <div className="absolute inset-0 opacity-[0.15] bg-gradient-to-br from-[#5b6f73] via-[#3eb4d6] to-[#5b6f73]"></div>
+                            <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-white/20 to-transparent"></div>
+                        </div>
+
+                        <nav className="container mx-auto px-4 py-6 space-y-1 relative z-10">
                             {navItems.map((item) => (
                                 <div key={item.name}>
                                     <Link
                                         href={item.href}
-                                        className="block px-4 py-3 text-gray-700 dark:text-gray-300 hover:text-[#99f200] font-medium transition-colors duration-200 rounded-lg hover:bg-[#99f200]"
+                                        className="block px-4 py-3 text-[#5b6f73] font-bold hover:text-[#5b6f73] transition-colors duration-200 rounded-lg hover:bg-[#99f200]"
                                         onClick={() => setIsMobileMenuOpen(false)}
                                     >
                                         {item.name}
                                     </Link>
                                     {item.submenu && (
-                                        <div className="ml-4 mt-1 space-y-1">
+                                        <div className="ml-4 mt-1 space-y-1 border-l-2 border-[#5b6f73]/10 pl-2">
                                             {item.submenu.map((subItem) => (
                                                 <Link
                                                     key={subItem.name}
                                                     href={subItem.href}
-                                                    className="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-[#99f200] transition-colors duration-200 rounded-lg hover:bg-[#99f200]"
+                                                    className="block px-4 py-2 text-sm text-[#5b6f73] font-medium hover:text-[#5b6f73] transition-colors duration-200 rounded-lg hover:bg-[#99f200]"
                                                     onClick={() => setIsMobileMenuOpen(false)}
                                                 >
                                                     {subItem.name}

@@ -102,7 +102,7 @@ const Products = () => {
 
                             {/* Product Name */}
                             <div className="mb-6">
-                                <h3 className={`text-2xl font-bold text-[#3eb4d6] mb-2 uppercase tracking-wide`}>
+                                <h3 className={`text-2xl font-display font-bold text-[#3eb4d6] mb-2 uppercase tracking-wide`}>
                                     {product.name}
                                 </h3>
                                 <p className="text-[#5b6f73]/70 text-sm leading-relaxed">

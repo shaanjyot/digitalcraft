@@ -26,12 +26,16 @@
   }
 
   h1,
-  h2,
+  h2 {
+    font-family: var(--font-carolingia) !important;
+    @apply font-bold leading-tight;
+  }
+
   h3,
   h4,
   h5,
   h6 {
-    font-family: var(--font-carolingia) !important;
+    font-family: var(--font-sans);
     @apply font-bold leading-tight;
   }
 }
