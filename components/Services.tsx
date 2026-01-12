@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 import {
     HiPencilAlt,
     HiCode,
-    HiSearchCircle,
-    HiDocumentText,
-    HiLightBulb,
-    HiPencil,
-    HiMail,
-    HiCursorClick,
+    HiDeviceMobile,
+    HiChip,
+    HiCloud,
+    HiDesktopComputer,
+    HiDatabase,
+    HiShieldCheck,
 } from "react-icons/hi";
 
 const Services = () => {
@@ -25,34 +25,34 @@ const Services = () => {
             description: "Build responsive, high-performance websites tailored to your business needs.",
         },
         {
-            icon: HiSearchCircle,
-            title: "SEO Marketing",
-            description: "Boost your online visibility and rank higher in search engine results.",
+            icon: HiDeviceMobile,
+            title: "App Development",
+            description: "Build native and cross-platform mobile applications for iOS and Android.",
         },
         {
-            icon: HiDocumentText,
-            title: "Content Marketing",
-            description: "Craft compelling content that tells your story and drives engagement.",
+            icon: HiChip,
+            title: "AI & Machine Learning",
+            description: "Implement intelligent solutions with cutting-edge AI and machine learning algorithms.",
         },
         {
-            icon: HiLightBulb,
-            title: "Campaign Strategy",
-            description: "Develop data-driven marketing campaigns that deliver measurable results.",
+            icon: HiDesktopComputer,
+            title: "Custom Software",
+            description: "Scalable, secure, and tailored software solutions to stream line your operations.",
         },
         {
-            icon: HiPencil,
-            title: "Blog Writing",
-            description: "Professional blog writing services to establish your thought leadership.",
+            icon: HiCloud,
+            title: "Cloud Solutions",
+            description: "Secure and scalable cloud infrastructure setup and management for your business.",
         },
         {
-            icon: HiMail,
-            title: "Email Marketing",
-            description: "Create targeted email campaigns that nurture leads and drive conversions.",
+            icon: HiDatabase,
+            title: "API Integration",
+            description: "Seamless third-party integrations and robust API development for connected systems.",
         },
         {
-            icon: HiCursorClick,
-            title: "Google Ads Expertise",
-            description: "Maximize ROI with expertly managed Google Ads campaigns.",
+            icon: HiShieldCheck,
+            title: "Cybersecurity",
+            description: "Protect your digital assets with comprehensive security assessments and robust implementations.",
         },
     ];
 
@@ -103,7 +103,7 @@ const Services = () => {
                             <h3 className="text-xl font-bold mb-3 text-[#5b6f73]">
                                 {service.title}
                             </h3>
-                            <p className="text-[#5b6f73]/80 leading-relaxed text-sm">
+                            <p className="text-[#5b6f73]/80 leading-relaxed text-sm line-clamp-2">
                                 {service.description}
                             </p>
                         </motion.div>

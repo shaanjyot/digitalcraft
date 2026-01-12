@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { HiArrowRight, HiCalendar, HiClock } from "react-icons/hi";
 
 const Blog = () => {
@@ -13,6 +14,7 @@ const Blog = () => {
             readTime: "5 min read",
             category: "Web Development",
             slug: "five-cs-building-website",
+            image: "/blog-web-dev.jpg",
         },
         {
             title: "What is the importance of a logo?",
@@ -21,6 +23,7 @@ const Blog = () => {
             readTime: "4 min read",
             category: "Branding",
             slug: "importance-of-logo",
+            image: "/blog-digital.jpg",
         },
         {
             title: "Digital Transformation in 2024",
@@ -29,6 +32,7 @@ const Blog = () => {
             readTime: "6 min read",
             category: "Digital Strategy",
             slug: "digital-transformation-2024",
+            image: "/blog-branding.jpg",
         },
     ];
 
@@ -66,12 +70,21 @@ const Blog = () => {
                             className="group bg-white rounded-2xl border border-gray-100 overflow-hidden premium-shadow"
                         >
                             {/* Image Placeholder */}
-                            <div className="relative h-48 bg-gray-50 overflow-hidden">
-                                <div className="absolute inset-0 flex items-center justify-center">
-                                    <div className="text-[#3eb4d6] text-8xl font-display font-bold opacity-10">
-                                        {post.title.charAt(0)}
+                            <div className="relative h-48 bg-gray-50 overflow-hidden group-hover:opacity-90 transition-opacity duration-300">
+                                {post.image ? (
+                                    <Image
+                                        src={post.image}
+                                        alt={post.title}
+                                        fill
+                                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                                    />
+                                ) : (
+                                    <div className="absolute inset-0 flex items-center justify-center">
+                                        <div className="text-[#3eb4d6] text-8xl font-display font-bold opacity-10">
+                                            {post.title.charAt(0)}
+                                        </div>
                                     </div>
-                                </div>
+                                )}
                                 <div className="absolute top-4 left-4">
                                     <span className="bg-white/90 text-[#3eb4d6] px-4 py-1.5 rounded-full text-xs font-bold shadow-sm uppercase tracking-wider">
                                         {post.category}

@@ -10,8 +10,8 @@ const Portfolio = () => {
         {
             title: "Professional Healthcare Solution",
             category: "Healthcare Platform",
-            description: "A comprehensive healthcare management system with patient portals and appointment scheduling.",
-            image: "/projects/healthcare.jpg",
+            description: "A comprehensive healthcare management system with patient portals and appointments scheduling.",
+            image: "/healthcare-preview.png",
             link: "https://professionalhealthcare.com.au/",
             tags: ["Web Development", "UI/UX", "Healthcare"],
         },
@@ -19,7 +19,7 @@ const Portfolio = () => {
             title: "Spicerack Foods",
             category: "E-Commerce",
             description: "Modern e-commerce platform for gourmet spices and food products with seamless shopping experience.",
-            image: "/projects/spicerack.jpg",
+            image: "/spicerack-preview.png",
             link: "https://spicerackfoods.com.au/",
             tags: ["E-Commerce", "Shopify", "Branding"],
         },
@@ -27,7 +27,7 @@ const Portfolio = () => {
             title: "Community Cafe",
             category: "Restaurant & Hospitality",
             description: "Engaging website for a community cafe featuring online ordering and event management.",
-            image: "/projects/cafe.jpg",
+            image: "/community-cafe-preview.png",
             link: "https://communitycafe.com.au/",
             tags: ["Web Design", "Online Ordering", "SEO"],
         },
@@ -66,9 +66,18 @@ const Portfolio = () => {
                         >
                             {/* Image */}
                             <div className="relative h-64 bg-gray-50 overflow-hidden">
-                                <div className="absolute inset-0 flex items-center justify-center text-[#3eb4d6] text-8xl font-display font-bold opacity-10">
-                                    {project.title.charAt(0)}
-                                </div>
+                                {project.image ? (
+                                    <Image
+                                        src={project.image}
+                                        alt={project.title}
+                                        fill
+                                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                                    />
+                                ) : (
+                                    <div className="absolute inset-0 flex items-center justify-center text-[#3eb4d6] text-8xl font-display font-bold opacity-10">
+                                        {project.title.charAt(0)}
+                                    </div>
+                                )}
                                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300"></div>
 
                                 {/* Overlay */}
