@@ -69,8 +69,8 @@ const Hero = () => {
                             {/* Stats */}
                             <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8">
                                 {[
-                                    { label: "Projects Completed", value: "100+" },
-                                    { label: "Happy Clients", value: "50+" },
+                                    { label: "Projects Completed", value: "10+" },
+                                    { label: "Happy Clients", value: "10+" },
                                     { label: "Years Experience", value: "8+" },
                                     { label: "Support Available", value: "24/7" },
                                 ].map((stat, idx) => (

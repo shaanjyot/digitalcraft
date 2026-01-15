@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { Providers } from "./providers";
+import { LayoutShell } from "@/components/LayoutShell";
 
 export const metadata: Metadata = {
   title: "Digital Craft Consultants - Digital Transformation Consultancy",
@@ -26,11 +28,12 @@ export default function RootLayout({
         <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/carolingia" />
       </head>
       <body className="antialiased font-sans">
-        <Header />
-        {children}
-        <Footer />
+        <Providers>
+          <LayoutShell header={<Header />} footer={<Footer />}>
+            {children}
+          </LayoutShell>
+        </Providers>
       </body>
     </html>
   );
 }
-
